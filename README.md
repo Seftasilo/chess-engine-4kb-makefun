@@ -6,8 +6,6 @@ A compact chess engine for the make.fun bounty
 ## Files
 
 - `main.py` — the engine, **4,074 bytes** (limit 4,096). Python 3.13 stdlib only.
-- `README.md` — this file.
-- `LICENSE` — MIT.
 - `.makefun/owner.json` — payout wallet.
 
 ## Strategy

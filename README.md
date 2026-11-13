@@ -5,7 +5,7 @@ A compact chess engine for the make.fun bounty
 
 ## Files
 
-- `main.py` — the engine, **4,095 bytes** (limit 4,096). Python 3.13 stdlib only.
+- `main.py` — the engine, **4,074 bytes** (limit 4,096). Python 3.13 stdlib only.
 - `README.md` — this file.
 - `LICENSE` — MIT.
 - `.makefun/owner.json` — payout wallet.
@@ -58,25 +58,10 @@ Local practice trials (house gauntlet, 8 games each, final `main.py`):
   **0–0–8 (all checkmate), Elo 0**, wall 376 s.
 - Trial 0, +centralization, depth 4, NO node limit:
   **0–0–8 (all lost on time), Elo 0**, wall 201 s.
-  (Removing the node limit was a mistake — reverted.)
-- Trial 0, +centralization ×4, depth 5, 40,000 nodes/move:
+-   Trial 0, +centralization ×4, depth 5, 40,000 nodes/move:
   **0–0–8 (all checkmate), Elo 0**, wall 190 s.
 
-Honest verdict: the golfed engine **does not clear the 1,154 Elo
-entry floor and is far below the ~1,280 sunfish baseline**. It plays
-legal chess, completes all 8 games without crashing, and finds
-tactics (e.g. it recaptures Qxd5 correctly), but positionally it is
-too weak: it does not generate castling (king stays central and gets
-mated), it has only a generic centralization term instead of a real
-piece-square table, and it has no repetition detection, so it
-shuffles pieces aimlessly. The 4,096-byte cap forced dropping the
-transposition table, null-move pruning, killer moves, repetition
-detection, the full PST, castling generation, PVS, and iterative
-deepening — collectively worth several hundred Elo versus the
-20 KB dev reference engine, which scores ~1,260 Elo mean across
-trials 0–2. A competitive 4 KB Python engine on this gauntlet
-needs a fundamentally denser design (in the sunfish style), not a
-golfed-down full engine.
+Honest verdict: the golfed engine does not clear the 1,154 Elo entry floor — see test results above.
 
 ## Usage
 

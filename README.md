@@ -58,7 +58,7 @@ Local practice trials (house gauntlet, 8 games each, final `main.py`):
   **0–0–8 (all checkmate), Elo 0**, wall 376 s.
 - Trial 0, +centralization, depth 4, NO node limit:
   **0–0–8 (all lost on time), Elo 0**, wall 201 s.
--   Trial 0, +centralization ×4, depth 5, 40,000 nodes/move:
+- Trial 0, +centralization ×4, depth 5, 40,000 nodes/move:
   **0–0–8 (all checkmate), Elo 0**, wall 190 s.
 
 Honest verdict: the golfed engine does not clear the 1,154 Elo entry floor — see test results above.
